@@ -2,6 +2,7 @@
 //service_4gm7z1n
 //zR-THbpDpBHlifJe2
 
+/*
 
 function contact(event){
     event.preventDefault();
@@ -33,14 +34,16 @@ const loading = document.querySelector(".loading");
 setTimeout(() => {
 
 }, 1000);
+*/
 
-
+let isModalOpen = false;
 
 function toggleModal() {
-    document.body.classList += ('modal--open');
     isModalOpen = !isModalOpen;
     if (isModalOpen) {
-        return document.body.classList.remove('modal--open');
+        document.body.classList.add('modal');
+    } else {
+        document.body.classList.remove('modal');
     }
     
 }
