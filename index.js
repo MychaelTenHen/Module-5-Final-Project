@@ -2,56 +2,46 @@
 //service_4gm7z1n
 //zR-THbpDpBHlifJe2
 
-function contact()
-{
-    const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
-    const message = document.getElementById("message").value;
-    emailjs.sendForm(
+
+function contact(event){
+    event.preventDefault();
+    const loading = document.querySelector(".loading");
+    const success = document.querySelector(".success");
+    loading.classList += " loading--visible";
+    emailjs
+      .sendForm(
         "service_4gm7z1n",
         "template_4dqplxr",
-        target,
+        event.target,
         "zR-THbpDpBHlifJe2"
-    , { 
-        from_name: name,
-        from_email: email,
-        message: message
+    )
+    .then(() => {   
+        loading.classList.remove("loading--visible");
+        success.classList += " success--visible";
+
+    }).catch(() =>{
+        loading.classList.remove("loading--visible");
+        alert(
+            "There was an error sending your message. Please try again later."
+        );
     })
-    .then(function(response){  
-        console.log("SUCCESS", response.status, response.text);
-        alert("Your message has been sent successfully!");
-    }, function(error){
-        console.log("FAILED", error);
-        alert("There was an error sending your message. Please try again later.");
-    });
+
 }
 
 const loading = document.querySelector(".loading");
-loading.classList += "modal__content"
+
 setTimeout(() => {
-    loading.classList.remove("modal__content")
+
 }, 1000);
 
 
 
-function openModal() {
-  const modal = document.getElementById('.modal');
-  modal.style.display = 'block';
+function toggleModal() {
+    document.body.classList += ('modal--open');
+    isModalOpen = !isModalOpen;
+    if (isModalOpen) {
+        return document.body.classList.remove('modal--open');
+    }
+    
 }
-
-const modal = document.querySelector('.modal');
-function closeModal() {
-  modal.style.display = 'none';
-
-const openButton = document.getElementById('openModalButton');
-const closeButton = document.getElementById('closeModalButton');
-
-openButton.addEventListener('click', openModal);
-closeButton.addEventListener('click', closeModal);
-}
-
-window.addEventListener('click', (event) => {
-  if (event.target === myModal) {
-    closeModal();
-  }
-});
+    
