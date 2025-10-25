@@ -41,9 +41,9 @@ let isModalOpen = false;
 function toggleModal() {
     isModalOpen = !isModalOpen;
     if (isModalOpen) {
-        document.body.classList.add('modal');
+        document.body.classList.add('modal--open');
     } else {
-        document.body.classList.remove('modal');
+        document.body.classList.remove('modal--open');
     }
     
 }
