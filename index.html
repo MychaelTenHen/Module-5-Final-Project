@@ -23,22 +23,22 @@
             <figure>
                 <img id="logo" src="assets/pngtree-flower-pot-and-plant-logo-growth-vector-logo-image_322946.jpg" alt="">
             </figure>
-            <ul class="nav__link--list" onclick="toggleModal()">
+            <ul class="nav__link--list">
                 <li class="nav__link">
                     <a href="#" class="
                     nav__link--anchor
                     link__hover--effect"
                     >Home</a>
                 </li>
-                <li class="nav__link">
+                <li class="nav__link" onclick="getPlants()">
                     <a href="#" class="
                     nav__link--anchor
                     link__hover--effect"
                     >Find a Plant</a>
                 </li>
-                <li class="nav__link">
+                <li class="nav__link" >
                     <a href="#" class="
-                    btn-contact">Contact
+                    btn-contact" onclick="toggleModal()">Contact
                     </a>
                 </li>
             </ul>
@@ -55,6 +55,8 @@
                 </figure>
         </div>
       </header>
+
+      
         <section class="contact">
             <div class="modal">
         <div class="modal__content">
@@ -73,8 +75,14 @@
         </div>        
       </div>
       </section>
-</body>
-    <footer>
+
+      
+        <section id="plant-section">
+            <h2>Plant List</h2>
+            <div id="plant-list"></div>
+        </section>
+    </section>
+      <footer>
         <div class="footer">
             <p>&copy; 2025 Plants. All rights reserved.</p>
             <div class="social-media">  
@@ -84,4 +92,6 @@
             </div>  
         </div>
     </footer>
+</body>
+    
 </html>
