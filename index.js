@@ -43,15 +43,14 @@ function toggleModal() {
     } else {
         document.body.classList.remove('modal--open');
     }
-    
 }
 
-document.addEventListener("DOMContentLoaded", () => {
   const API_URL = "https://corsproxy.io/?https://trefle.io/api/v1/plants?token=usr-Ev-NDlIIEK1vVg3uFLFf9lbE79wXTLMG2hekX30MIb4";
   const plantList = document.getElementById("plant-list");
 
   async function getPlants() {
     try {
+      const plantList = document.getElementById("plant-list");
       const response = await fetch(API_URL);
       const data = await response.json();
       const plants = data.data;
@@ -74,6 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
         .join("");
     } catch (error) {
       console.error("Error fetching plant data:", error);
+      const plantList = document.getElementById("plant-list");
       if (plantList) {
         plantList.innerHTML =
           "<p>Error loading plant data. Please try again later.</p>";
@@ -81,10 +81,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Called when user clicks “Find a Plant”
-  window.findPlants = function () {
-    getPlants();
-  };
+  
+
+  document.addEventListener("DOMContentLoaded", () => {
 });
 
 
