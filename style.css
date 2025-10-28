@@ -48,8 +48,10 @@ h2{
     justify-content: center;
     padding: 16px 0;
     font-size: 28px;
-    color: #97f097;
+    color: rgb(37, 126, 37);
 }
+
+
 
 .header {
     background-color: white;
@@ -329,6 +331,17 @@ button{
     margin-top: 20px;
 }
 
+.plants {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:white;
+    color: black;
+    padding: 40px 0;
+    margin-top: 40px;
+    font-size: 20px;
+}
+
 /* 
 
 FOOTER 
@@ -411,6 +424,16 @@ PLANT PAGE
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
+}
+
+#plant-section {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.plant__section {
+    margin-bottom: 20px;
+    color: rgb(37, 126, 37);
 }
 
 .plant-card {
