@@ -89,48 +89,43 @@ function toggleModal() {
 });
 
 
+    async function getPlants() {
+      const plantList = document.getElementById("plant-list");
+      const response = await fetch(API_URL);
+      const data = await response.json();
+      const plants = data.data;
 
-    /*
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const productDetailsDiv = document.getElementById('productDetails');
+      // Check plantList exists
+      if (!plantList) {
+        console.error("No element with id 'plant-list' found.");
+        return;
+      }
 
-            // Option 1: Get data from URL parameter
-            const urlParams = new URLSearchParams(window.location.search);
-            const productId = urlParams.get('id');
+      plantList.innerHTML = plants
+        .map(
+          (plant) => `
+          <div class="plant-card">
+            <img src="${plant.image_url || 'https://via.placeholder.com/150'}" alt="${plant.common_name || 'No name'}">
+            <h3>${plant.common_name || 'Unnamed Plant'}</h3>
+            <p><em>${plant.scientific_name || ''}</em></p>
+          </div>`
+        )
+        .join("");
+    } catch (error) {
+      console.error("Error fetching plant data:", error);
+      const plantList = document.getElementById("plant-list");
+      if (plantList) {
+        plantList.innerHTML =
+          "<p>Error loading plant data. Please try again later.</p>";
+      }
+    }
+  }
 
-            // Option 2: Get data from localStorage
-            // const productId = localStorage.getItem('selectedProductId');
+  
 
-            if (productId) {
-                fetchProductData(productId);
-            } else {
-                productDetailsDiv.innerHTML = 'No product selected.';
-            }
-        });
+  document.addEventListener("DOMContentLoaded", () => {
+});
 
-        async function fetchProductData(productId) {
-            try {
-                // Assuming your JSON file is structured like: { "product123": { "name": "...", "price": "..." } }
-                const response = await fetch('./data.json'); // Adjust path to your JSON file
-                const data = await response.json();
 
-                const product = data[productId];
 
-                if (product) {
-                    productDetailsDiv.innerHTML = `
-                        <h2>${product.name}</h2>
-                        <p>Price: $${product.price}</p>
-                        <p>${product.description}</p>
-                    `;
-                } else {
-                    productDetailsDiv.innerHTML = 'Product not found.';
-                }
-            } catch (error) {
-                console.error('Error fetching product data:', error);
-                productDetailsDiv.innerHTML = 'Error loading product details.';
-            }
-        }
-    </script>
-
-    */
+   

@@ -359,6 +359,56 @@ FOOTER
     font-size: 20px;
 }
 
+.social-media {
+    margin-left: 20px;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.social-list {
+    display: flex;
+    width: 100%;
+    max-width: 430px;
+    text-decoration: none;
+    
+}
+.social-link {
+    margin: 0 10px;
+    text-decoration: none;
+    color: rgb(37, 126, 37);   
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;    
+}
+
+.social-link {
+    color: green;
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.social-link:hover {
+    background-color: rgb(220, 240, 220);
+}
+
+.social-link:active {
+    transform: scale(0.98);
+}
+
+.social-link--anchor {
+    text-decoration: none;
+    color: #257e25;
+}
+
+.social-link--anchor:hover {
+    text-decoration: underline;
+}
+
+.social-link--anchor:active {
+    transform: scale(0.98);
+}
+
 .footer__plants {
     display: flex;
     align-items: center;
@@ -369,49 +419,6 @@ FOOTER
     margin-top: 40px;
     font-size: 20px;
 }
-
-
-/* 
-
-MEDIA
-
-*/
-
-@media (max-width: 480px) {
-    .navbar {
-        font-size: 12px;
-        padding: 10px;
-    }
-
-    .links {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .link {
-        margin-bottom: 10px;
-    }
-
-    input {
-        font-size: 16px;
-        height: 50px;
-    }
-
-    button[] {
-        width: 150px;
-        font-size: 24px;
-        padding: 15px 0;
-    }
-
-    h1 {
-        font-size: 18px;
-    }
-
-    h2 {
-        font-size: 14px;
-    }
-}
-
 
 /*
 
@@ -465,9 +472,44 @@ PLANT PAGE
 
 /* 
 
-MEDIA QUERIES 
+MEDIA
 
 */
+
+@media (max-width: 480px) {
+    .navbar {
+        font-size: 12px;
+        padding: 10px;
+    }
+
+    .links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .link {
+        margin-bottom: 10px;
+    }
+
+    input {
+        font-size: 16px;
+        height: 50px;
+    }
+
+    button[] {
+        width: 150px;
+        font-size: 24px;
+        padding: 15px 0;
+    }
+
+    h1 {
+        font-size: 18px;
+    }
+
+    h2 {
+        font-size: 14px;
+    }
+}
 
 
 @madia (max-width: 768px) {
