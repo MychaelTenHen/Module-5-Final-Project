@@ -45,6 +45,8 @@ function toggleModal() {
     }
 }
 
+// Plant API Fetching and Display
+
   const API_URL = "https://corsproxy.io/?https://trefle.io/api/v1/plants?token=usr-Ev-NDlIIEK1vVg3uFLFf9lbE79wXTLMG2hekX30MIb4";
   const plantList = document.getElementById("plant-list");
 
@@ -88,4 +90,47 @@ function toggleModal() {
 
 
 
-    
+    /*
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const productDetailsDiv = document.getElementById('productDetails');
+
+            // Option 1: Get data from URL parameter
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = urlParams.get('id');
+
+            // Option 2: Get data from localStorage
+            // const productId = localStorage.getItem('selectedProductId');
+
+            if (productId) {
+                fetchProductData(productId);
+            } else {
+                productDetailsDiv.innerHTML = 'No product selected.';
+            }
+        });
+
+        async function fetchProductData(productId) {
+            try {
+                // Assuming your JSON file is structured like: { "product123": { "name": "...", "price": "..." } }
+                const response = await fetch('./data.json'); // Adjust path to your JSON file
+                const data = await response.json();
+
+                const product = data[productId];
+
+                if (product) {
+                    productDetailsDiv.innerHTML = `
+                        <h2>${product.name}</h2>
+                        <p>Price: $${product.price}</p>
+                        <p>${product.description}</p>
+                    `;
+                } else {
+                    productDetailsDiv.innerHTML = 'Product not found.';
+                }
+            } catch (error) {
+                console.error('Error fetching product data:', error);
+                productDetailsDiv.innerHTML = 'Error loading product details.';
+            }
+        }
+    </script>
+
+    */
