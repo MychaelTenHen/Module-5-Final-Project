@@ -85,87 +85,8 @@ function toggleModal() {
 
   
 
-  document.addEventListener("DOMContentLoaded", () => {
+ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
 
-function getPlants() {
-  fetch(API_URL)
-    .then((response) => response.json())
-    .then((data) => {
-      const plants = data.data;
-      const plantList = document.getElementById("plant-list");
-      plantList.innerHTML = plants
-        .map(
-          (plant) => `
-          <div class="plant-card}
-    const plantlist = document.getElementById("plant-list");
-var plant = document.getElementById("plant-list");
-    plantList.innerHTML = "<li>" + plantlist + "</li>"; 
-            <img src="${plant.image_url || 'https://via.placeholder.com/150'}" alt="${plant.common_name || 'No name'}">
-            <h3>${plant.common_name || 'Unnamed Plant'}</h3>
-            <p><em>${plant.scientific_name || ''}</em></p>  
-            </div>`
-        )
-        .join("");
-    })
-    .catch((error) => {
-      console.error("Error fetching plant data:", error);
-      const plantList = document.getElementById("plant-list");
-      plantList.innerHTML =
-        "<p>Error loading plant data. Please try again later.</p>";
-    });
-}
-
-
-
-
-
-
-
-
-/*
-    async function getPlants() {
-      const plantList = document.getElementById("plant-list");
-      const response = await fetch(API_URL);
-      const data = await response.json();
-      const plants = data.data;
-
-      // Check plantList exists
-      if (!plantList) {
-        console.error("No element with id 'plant-list' found.");
-        return;
-      }
-
-      plantList.innerHTML = plants
-        .map(
-          (plant) => `
-          <div class="plant-card">
-            <img src="${plant.image_url || 'https://via.placeholder.com/150'}" alt="${plant.common_name || 'No name'}">
-            <h3>${plant.common_name || 'Unnamed Plant'}</h3>
-            <p><em>${plant.scientific_name || ''}</em></p>
-          </div>`
-        )
-        .join("");
-    } 
-    catch (error) {
-      console.error("Error fetching plant data:", error);
-      const plantList = document.getElementById("plant-list");
-      if (plantList) {
-        plantList.innerHTML =
-          "<p>Error loading plant data. Please try again later.</p>";
-      }
-    }
-  
-    
-  
-
-  document.addEventListener("DOMContentLoaded", () => {      });
-
-
-  */
-
-
-
-   

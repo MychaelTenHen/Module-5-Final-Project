@@ -319,17 +319,54 @@ textarea {
     resize: none;
 }
 
-button{
-    background-color: rgb(37, 126, 37);
-    color: white;
-    padding: 15px 30px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
+
+
+button {
+    width: 200px;
+    margin-left: 20px;
+    font-size: 40px;
+    color: rgb(37, 126, 37);
+    border-radius: 20px;
+    transition: all .25s ease;
     cursor: pointer;
-    font-size: 28px;
-    margin-top: 20px;
+    padding: 20px 0;
 }
+
+button.not-loading {
+    border: 1px solid rgb(37, 126, 37);
+    background-color: rgb(37, 126, 37);
+    cursor: pointer;
+    box-shadow: 7px 7px 14px rgba(37, 126, 37, .3);
+
+}
+
+button.not-loading:hover {
+    color: rgba(37, 126, 37, .3);
+    box-shadow: 4px 4px 8px rgba(37, 126, 37, .3);
+}
+
+button.not-loading:active {
+    transform: scale(0.98);
+}
+
+button.loading {
+    border: 1px solid rgb(200, 200, 200);
+    background-color: rgb(132, 132, 132);
+    box-shadow: 7px 7px 14px rgba(200, 200, 200, .3);
+    cursor: no-drop;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.fa-spinner {
+    animation: spin 1s linear infinite;
+    width: 24px;
+    height: 24px;
+    fill: grey;
+}   
 
 .plants {
     display: flex;
