@@ -51,6 +51,8 @@ function toggleModal() {
   encodeURIComponent("https://trefle.io/api/v1/plants?token=usr-Ev-NDlIIEK1vVg3uFLFf9lbE79wXTLMG2hekX30MIb4");
   const plantList = document.getElementById("plant-list");
 
+    let allPlants = [];
+
   async function getPlants() {
     try {
       const plantList = document.getElementById("plant-list");
@@ -90,6 +92,24 @@ function toggleModal() {
 });
 
 
+// -------------------------
+// Search BAR
+// -------------------------
+const searchInput = document.getElementById("search-input");
+const searchBtn = document.getElementById("search-btn");
+
+// Filter plants when user clicks search
+searchBtn.addEventListener("click", () => {
+    const query = searchInput.value.toLowerCase().trim();
+    const filteredPlants = allPlants.filter(plant =>
+        (plant.common_name && plant.common_name.toLowerCase().includes(query)) ||
+        (plant.scientific_name && plant.scientific_name.toLowerCase().includes(query))
+    );
+
+    displayPlants(filteredPlants);
+});
+
+
 
 const button = document.getElementById("search-btn");
 
@@ -104,5 +124,4 @@ function stopLoading() {
   button.classList.add("not-loading");
   button.textContent = 'Search'; // restore normal text
 }
-
 

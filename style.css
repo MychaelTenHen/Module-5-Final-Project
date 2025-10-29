@@ -325,12 +325,19 @@ textarea {
 button {
     width: 200px;
     margin-left: 20px;
-    font-size: 40px;
+    font-size: 36px;
     color: rgb(37, 126, 37);
     border-radius: 20px;
     transition: all .25s ease;
     cursor: pointer;
     padding: 20px 0;
+}
+
+#search-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
 }
 
 button.not-loading {
@@ -352,22 +359,11 @@ button.not-loading:active {
     transform: scale(0.98);
 }
 
-button.loading {
+.search-btn.loading {
     border: 1px solid rgb(200, 200, 200);
     background-color: rgb(132, 132, 132);
     box-shadow: 7px 7px 14px rgba(200, 200, 200, .3);
     cursor: no-drop;
-}
-
-#search-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
 }
 
 .fa-spinner {
@@ -376,6 +372,11 @@ button.loading {
     height: 24px;
     fill: grey;
 }   
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
 
 .plants {
     display: flex;
