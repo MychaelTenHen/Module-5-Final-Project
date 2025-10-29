@@ -90,3 +90,16 @@ function toggleModal() {
 
 
 
+const button = document.getElementById("search-btn");
+
+function startLoading() {
+  button.classList.remove("not-loading");
+  button.classList.add("loading");
+  button.innerHTML = '<i class="fas fa-spinner"></i>'; // show spinner
+}
+
+function stopLoading() {
+  button.classList.remove("loading");
+  button.classList.add("not-loading");
+  button.textContent = 'Search'; // restore normal text
+}

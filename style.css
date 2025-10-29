@@ -335,13 +335,15 @@ button {
 button.not-loading {
     border: 1px solid rgb(37, 126, 37);
     background-color: rgb(37, 126, 37);
+    color: white;
     cursor: pointer;
     box-shadow: 7px 7px 14px rgba(37, 126, 37, .3);
 
 }
 
 button.not-loading:hover {
-    color: rgba(37, 126, 37, .3);
+    color: gray;
+    background-color: rgb(28, 94, 28);
     box-shadow: 4px 4px 8px rgba(37, 126, 37, .3);
 }
 
