@@ -26,8 +26,8 @@
                 <img id="logo" src="assets/pngtree-flower-pot-and-plant-logo-growth-vector-logo-image_322946.jpg" alt="">
             </figure>
             <ul class="nav__link--list">
-                <li class="nav__link" onload="getPlants()">
-                    <a href="index.html" class="
+                <li class="nav__link" >
+                    <a href="index.html" onload="getPlants()" class="
                     nav__link--anchor
                     link__hover--effect"
                     >Home</a>
@@ -69,6 +69,9 @@
                 <textarea id="message" name="message" required></textarea> 
                 <button type="submit">Send</button>
             </form>
+            <div class="loading">Sending your message...</div>
+            <div class="success">Your message was sent successfully!</div>
+        </div>        
         </div>        
       </div>
       </section> 
@@ -79,7 +82,7 @@
             </div>
         </section>
         <section id="plants">
-            
+            <div id="plant-list"></div>
         </section>
         
 

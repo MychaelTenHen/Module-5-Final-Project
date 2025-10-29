@@ -47,7 +47,8 @@ function toggleModal() {
 
 // Plant API Fetching and Display
 
-  const API_URL = "https://corsproxy.io/?https://trefle.io/api/v1/plants?token=usr-Ev-NDlIIEK1vVg3uFLFf9lbE79wXTLMG2hekX30MIb4";
+  const API_URL = "https://api.allorigins.win/raw?url=" +
+  encodeURIComponent("https://trefle.io/api/v1/plants?token=usr-Ev-NDlIIEK1vVg3uFLFf9lbE79wXTLMG2hekX30MIb4");
   const plantList = document.getElementById("plant-list");
 
   async function getPlants() {
@@ -77,8 +78,7 @@ function toggleModal() {
       console.error("Error fetching plant data:", error);
       const plantList = document.getElementById("plant-list");
       if (plantList) {
-        plantList.innerHTML = plants
-          "<p>Error loading plant data. Please try again later.</p>";
+        plantList.innerHTML = "<p>Error loading plant data. Please try again later.</p>";
       }
     }
   }
@@ -86,6 +86,7 @@ function toggleModal() {
   
 
  document.addEventListener("DOMContentLoaded", () => {
+    getPlants();
 });
 
 
@@ -103,3 +104,5 @@ function stopLoading() {
   button.classList.add("not-loading");
   button.textContent = 'Search'; // restore normal text
 }
+
+

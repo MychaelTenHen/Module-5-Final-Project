@@ -275,6 +275,8 @@ MODAL
 .contact__btn {
     background-color: rgb(37, 126, 37);
     color: white;
+    height: 45px;
+    width: 45px;
     padding: 5px 15px;
     border-radius: 5px;
     text-decoration: none;
@@ -289,6 +291,7 @@ MODAL
 }
 
 .close-button {
+    position: relative;
     color: #aaa;
     float: right;
     font-size: 28px;
@@ -318,8 +321,6 @@ textarea {
     padding-left: 25px;
     resize: none;
 }
-
-
 
 button {
     width: 200px;
@@ -356,6 +357,12 @@ button.loading {
     background-color: rgb(132, 132, 132);
     box-shadow: 7px 7px 14px rgba(200, 200, 200, .3);
     cursor: no-drop;
+}
+
+#search-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 @keyframes spin {

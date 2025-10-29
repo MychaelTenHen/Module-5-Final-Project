@@ -63,7 +63,7 @@
       <button class="contact__btn" onclick="toggleModal()">
             <span class="close-button">&times;</span></button>
             <h2>Contact Us</h2>
-            <form id="contact__form" onSubmit="contact()">
+            <form id="contact__form" onSubmit="contact(event)">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
                 <label for="email">Email:</label>
@@ -72,6 +72,8 @@
                 <textarea id="message" name="message" required></textarea> 
                 <button type="submit">Send</button>
             </form>
+            <div class="loading">Sending your message...</div>
+            <div class="success">Your message was sent successfully!</div>
         </div>        
       </div>
       </section> 
