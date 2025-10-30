@@ -75,19 +75,6 @@ function toggleModal() {
         button.classList.add("not-loading");
     });
 
-function startLoading() {
-  button.classList.remove("not-loading");
-  button.classList.add("loading");
-  button.innerHTML = '<i class="fas fa-spinner"></i>'; // show spinner
-}
-
-function stopLoading() {
-  button.classList.remove("loading");
-  button.classList.add("not-loading");
-  button.textContent = 'Search'; // restore normal text
-}
-
-
   async function getPlants() {
     try {
       const plantList = document.getElementById("plant-list");
@@ -135,6 +122,8 @@ const searchBtn = document.getElementById("search-btn");
 
 // Filter plants when user clicks search
 searchBtn.addEventListener("click", () => {
+    // start spinner
+    startLoading();
     const query = searchInput.value.toLowerCase().trim();
     const filteredPlants = allPlants.filter(plant =>
         (plant.common_name && plant.common_name.toLowerCase().includes(query)) ||
@@ -142,8 +131,24 @@ searchBtn.addEventListener("click", () => {
     );
 
     displayPlants(filteredPlants);
+    setTimeout(() => {
+        displayPlants(filteredPlants);
+        stopLoading();
+    }, 500); // simulate loading delay
+
+
+
+
+function startLoading() {
+  button.classList.remove("not-loading");
+  button.classList.add("loading");
+  button.innerHTML = '<i class="fas fa-spinner"></i>'; // show spinner
+}
+
+function stopLoading() {
+  button.classList.remove("loading");
+  button.classList.add("not-loading");
+  button.textContent = 'Search'; // restore normal text
+}
+
 });
-
-
-
-

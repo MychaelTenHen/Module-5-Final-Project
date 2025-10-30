@@ -189,6 +189,22 @@ input {
     cursor: pointer;
 }
 
+.loading {
+    display: none;
+}
+
+.loading.loading-visible {
+    display: block;
+}
+
+.success {
+    display: none;
+}
+
+.success.success-visible {
+    display: block;
+}
+
 button.loading {
     display: flex;
     position: relative;
@@ -197,15 +213,15 @@ button.loading {
     align-items: center;
     justify-content: center;
     border-radius: 5px;
+    
+}
+
+button.loading {
+    border-radius: 5px;
     text-decoration: none;
     font-weight: bold;
     cursor: pointer;
-    margin: 0 ;
-}
-
-button.loading[] {
-    background-color:rgb(37, 126, 37);
-    cursor: no-drop;
+    margin: 0;
 }
 
 .btn-contact:active {
@@ -225,6 +241,17 @@ button.loading[] {
     font-weight: bold;
     cursor: pointer;
     font-size: 28px;    
+}
+
+#search-btn.loading {
+    color: grey;
+    font-size: 1.2em;
+    animation: spin 1s linear infinite;
+}
+
+button.loading {
+    background-color: rgb(37, 126, 37);
+    cursor: no-drop;
 }
 
 /*
@@ -586,10 +613,16 @@ MEDIA
     h2 {
         font-size: 14px;
     }
+
+    button {
+        width: 150px;
+        font-size: 24px;
+        padding: 15px 0;
+    }
 }
 
 
-@madia (max-width: 768px) {
+@media (max-width: 768px) {
     .row {
         flex-direction: column;
     }
@@ -612,10 +645,9 @@ MEDIA
 
     h1 {
         display: flex;
-        align-items: center;
-        justify-content: center;
         font-size: 24px;
     }    
+    
     h2 {
         font-size: 18px;
     }
