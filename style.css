@@ -366,6 +366,35 @@ button.not-loading:active {
     cursor: no-drop;
 }
 
+#search-btn.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#search-btn.loading {
+  border: 1px solid rgb(200, 200, 200);
+  background-color: rgb(132, 132, 132);
+  box-shadow: 7px 7px 14px rgba(200, 200, 200, .3);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+#search-btn.loading i {
+  color: white;
+  font-size: 1.2em;
+  animation: spin 1s linear infinite;
+}
+
+#search-btn {
+  transition: all 0.3s ease;
+}
+
+
+#search-btn.loading i {
+  animation: spin 1s linear infinite;
+}
+
 .fa-spinner {
     animation: spin 1s linear infinite;
     width: 24px;
