@@ -53,6 +53,41 @@ function toggleModal() {
 
     let allPlants = [];
 
+    function displayPlants(plants) {
+        const plantList = document.getElementById("plant-list");
+        if (!plantList) return;
+        plantList.innerHTML = plants
+            .map(
+                (plant) => `
+          <div class="plant-card">
+            <img src="${plant.image_url || 'https://via.placeholder.com/150'}" alt="${plant.common_name || 'No name'}">
+            <h3>${plant.common_name || 'Unnamed Plant'}</h3>    
+            <p><em>${plant.scientific_name || ''}</em></p>
+          </div>`
+            )
+            .join("");
+
+    }
+
+    const button = document.getElementById("search-btn");
+
+    requestAnimationFrame((faspinner) => {
+        button.classList.add("not-loading");
+    });
+
+function startLoading() {
+  button.classList.remove("not-loading");
+  button.classList.add("loading");
+  button.innerHTML = '<i class="fas fa-spinner"></i>'; // show spinner
+}
+
+function stopLoading() {
+  button.classList.remove("loading");
+  button.classList.add("not-loading");
+  button.textContent = 'Search'; // restore normal text
+}
+
+
   async function getPlants() {
     try {
       const plantList = document.getElementById("plant-list");
@@ -111,17 +146,4 @@ searchBtn.addEventListener("click", () => {
 
 
 
-const button = document.getElementById("search-btn");
-
-function startLoading() {
-  button.classList.remove("not-loading");
-  button.classList.add("loading");
-  button.innerHTML = '<i class="fas fa-spinner"></i>'; // show spinner
-}
-
-function stopLoading() {
-  button.classList.remove("loading");
-  button.classList.add("not-loading");
-  button.textContent = 'Search'; // restore normal text
-}
 
