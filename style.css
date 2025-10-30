@@ -160,20 +160,20 @@ input {
     padding: 16px 0;
 }
 
-.input-wrapper[] {
+.input-wrapper {
     width: 100%;
     position: relative;
     display: flex;
     justify-content: center;
 }
 
-.input-wrapper .input[] {
+.input-wrapper .input {
     font-size: 16px;
     height: 60px;
     padding: 0 0 0 8px;
 }
 
-.input-wrapper .button[] {
+.input-wrapper .button {
     max-width: none;
     width: 100%;
     margin: 20px 0 0 0;
@@ -326,7 +326,8 @@ button {
     width: 200px;
     margin-left: 20px;
     font-size: 36px;
-    color: rgb(37, 126, 37);
+    background-color: #257e25;
+    color: white;
     border-radius: 20px;
     transition: all .25s ease;
     cursor: pointer;
