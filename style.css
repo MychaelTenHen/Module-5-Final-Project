@@ -573,6 +573,41 @@ PLANT PAGE
   font-size: 0.9em;
 }
 
+.no-results {
+  width: 100%;
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.2rem;
+  color: #4a4a4a;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.plant-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem;
+  background-color: #f9f9f9;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.plant-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
 
 /* 
 
