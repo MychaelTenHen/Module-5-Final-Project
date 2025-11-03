@@ -81,6 +81,7 @@ function toggleModal() {
       const response = await fetch(API_URL);
       const data = await response.json();
       const plants = data.data;
+      allPlants = plants; // Store all plants for searching
 
       // Check plantList exists
       if (!plantList) {
@@ -121,6 +122,9 @@ const searchInput = document.getElementById("search-input");
 const searchBtn = document.getElementById("search-btn");
 
 // Filter plants when user clicks search
+searchInput.addEventListener("keypress", e => {
+  if (e.key === "Enter") searchBtn.click();
+});
 searchBtn.addEventListener("click", () => {
     // start spinner
     startLoading();
@@ -135,8 +139,6 @@ searchBtn.addEventListener("click", () => {
         displayPlants(filteredPlants);
         stopLoading();
     }, 500); // simulate loading delay
-
-
 
 
 function startLoading() {
