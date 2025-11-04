@@ -69,6 +69,7 @@ function toggleModal() {
 
     }
 
+   
     const button = document.getElementById("search-btn");
 
     requestAnimationFrame((faspinner) => {
@@ -134,11 +135,32 @@ searchBtn.addEventListener("click", () => {
         (plant.scientific_name && plant.scientific_name.toLowerCase().includes(query))
     );
 
+  // If no matches, show message
+    
+        if (filteredPlants.length === 0) {
+    const plantList = document.getElementById("plant-list");
+    plantList.innerHTML = `<p class="no-results">No plants found. Try another name.</p>`;
+    stopLoading();
+    return; // Exit early
+  }
+
+  // Otherwise, display matching plants
+  setTimeout(() => {
+    displayPlants(filteredPlants);
+    stopLoading();
+  }, 500);
+});
+
+  
+
+
     displayPlants(filteredPlants);
     setTimeout(() => {
         displayPlants(filteredPlants);
         stopLoading();
     }, 500); // simulate loading delay
+
+ 
 
 
 function startLoading() {
@@ -153,5 +175,4 @@ function stopLoading() {
   button.textContent = 'Search'; // restore normal text
 }
 
-});
 
