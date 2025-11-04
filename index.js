@@ -151,19 +151,7 @@ searchBtn.addEventListener("click", () => {
   }, 500);
 });
 
-  
-
-
-    displayPlants(filteredPlants);
-    setTimeout(() => {
-        displayPlants(filteredPlants);
-        stopLoading();
-    }, 500); // simulate loading delay
-
- 
-
-
-function startLoading() {
+  function startLoading() {
   button.classList.remove("not-loading");
   button.classList.add("loading");
   button.innerHTML = '<i class="fas fa-spinner"></i>'; // show spinner
